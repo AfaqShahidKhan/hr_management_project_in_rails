@@ -8,6 +8,11 @@ class EmployeesController < ApplicationController
     @employee = Employee.new
 
  end
+  def edit 
+
+    @employee= Employee.find(params[:id ])
+  end
+   
 
     def create
     @employee= Employee.new(employee_params)
