@@ -32,8 +32,7 @@
    <%= link_to "Edit", edit_employee_path(employee), class: "btn btn-info" %>
 
    
-   <%= link_to "Delete", employee_path(employee), method: :delete , class: "btn btn-info" %>
-   </td>
+   <%= link_to "Delete", employee_path(employee), method: :delete, class: "btn btn-danger", data: { confirm: "Are You sure to delete this employee" } %>
   
   
    </tr>
