@@ -12,6 +12,25 @@ class EmployeesController < ApplicationController
 
     @employee= Employee.find(params[:id ])
   end
+
+
+  
+
+  def update 
+    @employee= Employee.find(params[:id ])
+    if @employee.update(employee_params)
+      redirect_to employees_path, notice: "Employee has been updated!"
+  else
+      render :edit
+    end
+
+  end
+   
+  def show 
+    @employee= Employee.find(params[:id])
+
+
+  end
    
 
     def create

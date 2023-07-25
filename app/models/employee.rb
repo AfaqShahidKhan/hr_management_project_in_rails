@@ -10,6 +10,9 @@ class Employee < ApplicationRecord
     def full_addres
         "#{pincode}#{city}#{state}#{address_line_1}#{address_line_2}".strip
         end
+    def address
+    "#{address_line_1} #{address_line_2}".strip
+    end
 
 #This is the methodology of validate
     # validates :
