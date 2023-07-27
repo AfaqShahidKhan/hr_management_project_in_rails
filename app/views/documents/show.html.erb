@@ -1,0 +1,25 @@
+<div class="col-lg-12">
+<div class="card mt-5 mb-5 rounded-0">
+<div class="card-body">
+<h2 class="text-center mb-5">Document Details</h2>
+
+<div class="row ">
+<div class="col-lg-6">
+<h3>Document Information</h3>
+
+<p><strong> Name:</strong> <%= @document.name %></p>
+<p><strong>Document Type:</strong> <%= @document.doc_type %></p>
+<p><strong>Employee Id:</strong> <%= @document.employee_id %></p>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+
+<%= link_to "Back to documents", documents_path , class:"btn btn-lg btn-outline-primary rounded-0 " %>
+
+<%= link_to "Edit document", edit_document_path(@document), class: "btn btn-lg btn-outline-info rounded-0 " %>
+</div>

@@ -1,0 +1,43 @@
+<%= form_with model: document do |form|  %>
+    <div class="row">
+    
+    <div class="col-lg-4">
+    <div class="form-group">
+    <%= form.label   :name , class: "mb-2" %>
+    <%= form.text_field :name , class: "form-control form-control-lg" %>
+    <% @document.errors.full_messages_for(:name).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+    <% end %>
+    </div>
+    </div>
+    
+    <div class="col-lg-4">
+    <div class="form-group">
+    <%= form.label   :doc_type , class: "mb-2" %>
+    <%= form.text_field :doc_type , class: "form-control form-control-lg" %>
+    <% @document.errors.full_messages_for(:doc_type).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+    <% end %>
+    </div>
+    </div>
+    <div class="col-lg-4">
+    <div class="form-group">
+    <%= form.label   :employee_id , class: "mb-2" %>
+    <%= form.number_field :employee_id , class: "form-control form-control-lg" %>
+    <% @document.errors.full_messages_for(:employee_id).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+    <% end %>
+    </div>
+    </div>
+
+
+    </div>
+    <div class="row">
+    <div class="col-lg-12 mt-3 text-center p-2">
+    <%= form.submit class:"btn btn-success btn-lg rounded-0 text-center mx-4" %>
+    <%= link_to "Back to Documents", documents_path , class:"btn btn-lg btn-outline-primary rounded-0 " %>
+    
+    </div>
+    </div>
+
+    <% end %>
