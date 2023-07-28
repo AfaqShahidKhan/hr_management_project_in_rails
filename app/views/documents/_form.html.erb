@@ -14,7 +14,7 @@
     <div class="col-lg-4">
     <div class="form-group">
     <%= form.label   :doc_type , class: "mb-2" %>
-    <%= form.text_field :doc_type , class: "form-control form-control-lg" %>
+    <%= form.select :doc_type, options_for_select(Document::DOC_TYPES, selected: document.doc_type) ,{prompt: 'Select Document type'}, { class: "form-select form-select-lg rounded-0"} %>
     <% @document.errors.full_messages_for(:doc_type).each do |message| %>
         <p class="text-danger"><%= message %></p>
     <% end %>
@@ -22,8 +22,8 @@
     </div>
     <div class="col-lg-4">
     <div class="form-group">
-    <%= form.label   :employee_id , class: "mb-2" %>
-    <%= form.number_field :employee_id , class: "form-control form-control-lg" %>
+    <%= form.label   :employee_id , class: "mb-2" %> 
+    <%= form.select :employee_id, options_for_select(Employee.all.map{|employee|[employee.name_with_email, employee.id]}, selected: document.employee_id) ,{prompt: 'Select Employee'}, { class: "form-select form-select-lg rounded-0"} %>
     <% @document.errors.full_messages_for(:employee_id).each do |message| %>
         <p class="text-danger"><%= message %></p>
     <% end %>
