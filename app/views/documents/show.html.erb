@@ -6,7 +6,11 @@
 <div class="row ">
 <div class="col-lg-6">
 <h3>Document Information</h3>
-
+<% if @document.image.attached? %>
+    <%= image_tag @document.image %>
+    <% else %>
+  Image is not attached.
+<% end %>
 <p><strong> Name:</strong> <%= @document.name %></p>
 <p><strong>Document Type:</strong> <%= @document.doc_type %></p>
 <p><strong>Employee Id:</strong> <%= @document.employee_id %></p>

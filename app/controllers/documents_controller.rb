@@ -47,10 +47,10 @@ def destroy
 
 
 private 
-   def document_params 
-    params.require(:document).permit(:name, :doc_type,:employee_id
-    )
-   end 
+def document_params 
+  params.require(:document).permit(:name, :doc_type, :employee_id, :image)
+end 
+
 
    def set_document
       @document= Document.find(params[:id])
